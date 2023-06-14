@@ -1,0 +1,67 @@
+﻿@model ProductDto
+
+<form asp-action="ProductCreate" enctype="multipart/form-data">
+    <br />
+    <div class="container border p-3">
+        <h1 class="text-white text-center">Tạo sản phẩm</h1>
+
+        <hr />
+        <div class="row">
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size:20px;"> Tên sản phẩm</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size:20px;">Danh mục sản phẩm</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="CategoryName" class="form-control" />
+                <span asp-validation-for="CategoryName" class="text-danger"></span>
+            </div>
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size:20px;">Nội dung</label>
+            </div>
+            <div class="col-10 pb-3">
+                <textarea asp-for="Description" class="form-control" rows="5"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size:20px;">Giá tiền</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size:20px;">Link hình ảnh</label>
+            </div>
+            <div class="col-10 pb-3">
+              
+                <input asp-for="ImageUrl"  class="form-control" />
+                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+            </div>
+
+       
+            <div class="col-5 offset-2">
+                <input type="submit" value="Lưu" class="btn btn-success form-control" />
+
+            </div>
+            <div class="col-5 ">
+
+                <a asp-action="ProductIndex" class="btn-primary btn form-control ">Quay về danh sách sản phẩm</a>
+            </div>
+
+        </div>
+
+        <div>
+        </div>
+    </div>
+</form>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

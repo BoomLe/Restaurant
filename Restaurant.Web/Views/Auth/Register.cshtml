@@ -1,0 +1,46 @@
+﻿@model RegisterActionRequestDto
+<form method="post">
+    <div class="container border p-4">
+        <div class="row text-center p-3">
+            <h1>Đăng ký</h1>
+        </div>
+        <div class="row text-center">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6 offset-md-3 pd-2 mb-3">
+                <input asp-for="Email" class="form-control" placeholder="Địa chỉ email..." />
+                <span
+                    asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="col-12 col-md-6 offset-md-3 pd-2  mb-3">
+                <input asp-for="Name" class="form-control" placeholder="Họ và tên..." />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="col-12 col-md-6 offset-md-3 pd-2  mb-3">
+                <input asp-for="PhoneNumber" class="form-control" placeholder="Số điện thoại..." />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+
+            <div class="col-12 col-md-6 offset-md-3 pb-2  mb-3">
+                <input asp-for="Password" type="password" class="form-control" placeholder="Mật khẩu..." />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <div class="col-12 col-md-6 offset-md-3 pb-2  mb-3">
+               <select asp-for="role" asp-items="@ViewBag.RoleList" class="form-select">
+                   <option disabled selected>--Chọn cấp quyền tài khoản--</option>
+               </select>
+            </div>
+
+            <div class="col-12 col-md-6 offset-md-3 pb-2  mb-3">
+                <button type="submit" class="form-control btn btn-success" value="Submit">Đăng ký</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+            }

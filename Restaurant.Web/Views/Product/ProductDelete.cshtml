@@ -1,0 +1,64 @@
+﻿@model ProductDto
+<form asp-action="ProductDelete">
+    <br />
+    <div class="container border p-3">
+        <h1 class="text-secondary text-center">Xóa sản phẩm </h1>
+        <input asp-for="ProductId" hidden />
+        <hr />
+        <div class="row">
+
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size:20px;">Tên sản phẩm</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for=Name disabled class="form-control" />
+
+            </div>
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size:20px;">Danh mục sản phẩm</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for=CategoryName disabled class="form-control" />
+
+            </div>
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size:20px;">Nội dung</label>
+            </div>
+            <div class="col-10 pb-3">
+                <textarea asp-for=Description disabled class="form-control" rows="5"></textarea>
+
+            </div>
+
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size:20px;">Giá</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for=Price disabled class="form-control"></input>
+
+
+            </div>
+
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size:20px;">Link hình ảnh</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for=ImageUrl disabled class="form-control" />
+
+            </div>
+
+            <div class="col-5 offset-2">
+                <input type="submit" value="Xóa" class="btn btn-danger form-control" />
+
+            </div>
+            <div class="col-5 ">
+
+                <a asp-controller="Product" asp-action="ProductIndex" class="btn-primary btn form-control ">Danh sách sản phẩm </a>
+            </div>
+
+
+        </div>
+
+        <div>
+        </div>
+    </div>
+</form>
