@@ -4,3 +4,7 @@ AuthAPI : https://restaurantserviceapiauth.azurewebsites.net
 => ProductAPI : https://restaurantgetway.azurewebsites.net
 => CartAPI : https://restaurantgetway.azurewebsites.net
 => OrderAPI: https://restaurantgetway.azurewebsites.net
+Seed Card PaymentOnline:
+4242 4242 4242 4242
+04 / 24
+424
