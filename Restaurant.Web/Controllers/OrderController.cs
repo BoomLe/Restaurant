@@ -20,44 +20,10 @@ namespace Restaurant.Web.Controllers
         {
             _orderService = orderService;
         }
+
         [Authorize]
         public IActionResult OrderIndex()
         {
-            return View();
-        }
-        [HttpPost("OrderReadyForPickup")]
-        public async Task< IActionResult> OrderReadyForPickup(int orderId)
-        {
-            var response = await _orderService.UpdateOrderStatus(orderId, SD.Status_ReadyForPickup);
-            if(response != null && response.IsSuccess) 
-            {
-                TempData["success"] = "Đã được cập nhật !";
-                return RedirectToAction(nameof(OrderDetail), new { orderId = orderId });
-            }
-            return View();
-        }
-
-        [HttpPost("CompleteOrder")]
-        public async Task<IActionResult> CompleteOrder(int orderId)
-        {
-            var response = await _orderService.UpdateOrderStatus(orderId, SD.Status_Completed);
-            if (response != null && response.IsSuccess)
-            {
-                TempData["success"] = "Đã được cập nhật !";
-                return RedirectToAction(nameof(OrderDetail), new { orderId = orderId });
-            }
-            return View();
-        }
-
-        [HttpPost("CancelOrder")]
-        public async Task<IActionResult> CancelOrder(int orderId)
-        {
-            var response = await _orderService.UpdateOrderStatus(orderId, SD.Status_Cancelled);
-            if (response != null && response.IsSuccess)
-            {
-                TempData["success"] = "Đã được cập nhật !";
-                return RedirectToAction(nameof(OrderDetail), new { orderId = orderId });
-            }
             return View();
         }
 
@@ -77,6 +43,42 @@ namespace Restaurant.Web.Controllers
                 return NotFound();
             }
             return View(orderHeaderDto);
+        }
+
+        [HttpPost("OrderReadyForPickup")]
+        public async Task<IActionResult> OrderReadyForPickup(int orderId)
+        {
+            var response = await _orderService.UpdateOrderStatus(orderId, SD.Status_ReadyForPickup);
+            if (response != null && response.IsSuccess)
+            {
+                TempData["success"] = "Sẵn sàng giao hàng ";
+                return RedirectToAction(nameof(OrderDetail), new { orderId = orderId });
+            }
+            return View();
+        }
+
+        [HttpPost("CompleteOrder")]
+        public async Task<IActionResult> CompleteOrder(int orderId)
+        {
+            var response = await _orderService.UpdateOrderStatus(orderId, SD.Status_Completed);
+            if (response != null && response.IsSuccess)
+            {
+                TempData["success"] = "Hoàn thành giao hàng";
+                return RedirectToAction(nameof(OrderDetail), new { orderId = orderId });
+            }
+            return View();
+        }
+
+        [HttpPost("CancelOrder")]
+        public async Task<IActionResult> CancelOrder(int orderId)
+        {
+            var response = await _orderService.UpdateOrderStatus(orderId, SD.Status_Cancelled);
+            if (response != null && response.IsSuccess)
+            {
+                TempData["success"] = "Hủy đơn hàng thành công";
+                return RedirectToAction(nameof(OrderDetail), new { orderId = orderId });
+            }
+            return View();
         }
 
 

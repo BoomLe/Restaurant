@@ -19,50 +19,52 @@ namespace Restaurant.Web.Services
 
         public async Task<ResponseDto?> ApplyCouponAsync(CartDto cartDto)
         {
-            return await _baseService.SendAsync(new RequestDto() 
+            return await _baseService.SendAsync(new RequestDto()
             {
-                ApiType = ApiType.POST,
+                ApiType = SD.ApiType.POST,
                 Data = cartDto,
-                Url = CartAPIBase + "/api/cart/ApplyCoupon"
+                Url = SD.CartAPIBase + "/api/cart/ApplyCoupon"
             });
         }
 
         public async Task<ResponseDto?> EmailCart(CartDto cartDto)
         {
-            return await _baseService.SendAsync(new RequestDto() 
+            return await _baseService.SendAsync(new RequestDto()
             {
-                ApiType = ApiType.POST,
+                ApiType = SD.ApiType.POST,
                 Data = cartDto,
-                Url = CartAPIBase + "/api/cart/emailcartrequest"
+                Url = SD.CartAPIBase + "/api/cart/EmailCartRequest"
             });
         }
 
         public async Task<ResponseDto?> GetCartByUserIdAsnyc(string userId)
         {
-            return await _baseService.SendAsync(new RequestDto() 
+            return await _baseService.SendAsync(new RequestDto()
             {
-                ApiType = ApiType.GET,
-                Url = CartAPIBase + "/api/cart/GetCart/" + userId
+                ApiType = SD.ApiType.GET,
+                Url = SD.CartAPIBase + "/api/cart/GetCart/" + userId
             });
         }
+
 
         public async Task<ResponseDto?> RemoveFromCartAsync(int cartDetailsId)
         {
-            return await _baseService.SendAsync(new RequestDto() 
+            return await _baseService.SendAsync(new RequestDto()
             {
-                ApiType = ApiType.POST,
+                ApiType = SD.ApiType.POST,
                 Data = cartDetailsId,
-                Url = CartAPIBase + "/api/cart/removecart"
+                Url = SD.CartAPIBase + "/api/cart/RemoveCart"
             });
         }
 
+
         public async Task<ResponseDto?> UpsertCartAsync(CartDto cartDto)
         {
-            return await _baseService.SendAsync(new RequestDto() 
+            return await _baseService.SendAsync(new RequestDto()
             {
-                ApiType = ApiType.POST,
+                ApiType = SD.ApiType.POST,
                 Data = cartDto,
-                Url = CartAPIBase + "/api/cart/CartUpsert"
+                Url = SD.CartAPIBase + "/api/cart/CartUpsert"
             });
         }
     }

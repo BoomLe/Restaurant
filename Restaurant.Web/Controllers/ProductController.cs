@@ -46,7 +46,7 @@ namespace Restaurant.Web.Controllers
 
                 if (response != null && response.IsSuccess)
                 {
-                    TempData["success"] = "Product created successfully";
+                    TempData["success"] = "Tạo thành công sản phẩm";
                     return RedirectToAction(nameof(ProductIndex));
                 }
                 else

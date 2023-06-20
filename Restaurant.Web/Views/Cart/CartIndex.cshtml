@@ -10,10 +10,10 @@
             <div class="card border mt-4 container">
                 <div class="card-header bg-dark text-light ml-0 row ">
                     <div class="col-6">
-                        <h3  class="text-success"><i class="bi bi-cart"></i> &nbsp; Giỏ hàng</h3>
+                        <h3 class="text-success"><i class="bi bi-cart"></i> &nbsp; Giỏ hàng</h3>
                     </div>
                     <div class="col-6 text-end">
-                        <a asp-action="Index" asp-controller="Home" class="btn btn-outline-warning mt-2 btn-sm">Continue Shopping</a>
+                        <a asp-action="Index" asp-controller="Home" class="btn btn-outline-warning mt-2 btn-sm">Tiếp tục mua hàng</a>
                     </div>
                 </div>
                 <div class="card-body">
@@ -85,17 +85,17 @@
                 </div>
                 <div class="card-footer row">
                     <div class="col-6 col-md-3 ">
-                        <button type="submit" class="btn btn-outline-danger form-control">Gửi Email Giỏ Hàng</button>
+                        <button type="submit" class="btn btn-outline-danger form-control">Thanh Toán</button>
                     </div>
                     <div class="col-6 col-md-3 offset-md-6">
-                        <a  asp-action="Checkout" class="btn btn-success form-control " >Thanh Toán</a>
+                        <a asp-action="Checkout" class="btn btn-success form-control ">Thanh Toán Online</a>
                     </div>
                 </div>
             </div>
         </div>
     </form>
-    }
-    else
-    {
-       <h1 style="color:gray">Giỏ hàng đang rỗng hay thêm sản phẩm</h1>
-    }
+}
+else
+{
+    <h1 style="color:gray">Giỏ hàng đang rỗng hay thêm sản phẩm <i class="bi bi-emoji-smile-fill"></i> </h1>
+}

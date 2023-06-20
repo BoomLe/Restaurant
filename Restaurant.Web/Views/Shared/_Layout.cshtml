@@ -29,10 +29,8 @@
                         <li class="nav-item">
                             <a class="nav-link  " asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link  " asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-
+                    
+                       
                         @if(User.IsInRole(SD.RoleAdmin))
                         {
                         <li class=" nav-item dropdown " >
@@ -44,11 +42,11 @@
                                     <li><a class="dropdown-item" asp-controller="Product" asp-action="ProductIndex">Sản phẩm</a></li>
                                 <li><a class="dropdown-item" asp-controller="Coupon" asp-action="CouponIndex">Phiếu giảm giá</a></li>
 
-                               
 
                                     <li class="nav-item">
                                         <a class="nav-link  " asp-controller="Order" asp-action="OrderIndex">Quản lý thanh toán</a>
                                     </li>
+                                   
 
                             <li><hr class="dropdown-divider" /></li>
                             </ul>
